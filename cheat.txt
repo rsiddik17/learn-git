@@ -1,4 +1,4 @@
-# Inisialisasi dan Commit
+# Inisialisasi
 git init
 
 
