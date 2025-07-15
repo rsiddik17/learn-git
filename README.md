@@ -20,3 +20,15 @@
 - git pull origin main
 
 # Branch Operations
+List branches: git branch
+Create a new branch: git branch <name>
+Switch to a branch: git checkout <branch>
+Merge a branch into the current branch: git merge <branch>
+
+- git branch feature-login
+- git checkout feature-login
+# Make changes
+- git add .
+- git commit -m "Implement login functionality"
+- git checkout main
+- git merge feature-login
