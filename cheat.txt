@@ -1,30 +1,106 @@
 # Inisialisasi dan Commit
 git init
+
+
+# Menambahkan file ke staging area
 git add .
+git add <nama-file>
+
+
+# Commit perubahan dengan pesan
 git commit -m "pesan"
+git commit --amend      # Mengubah commit terakhir(misalnya typo pesan).
 
-# Remote dan Push ke GitHub
+
+# Mengatur remote repository (GitHub)
 git remote add origin <url>
-git branch -M main
-git push -u origin main
+git branch -M main  # Rename branch ke 'main'
+git push -u origin main  # Push pertama
+git push --force-with-lease     # Git akan mengecek dulu apakah branch remote masih sama seperti saat terakhir kamu fetch/pull
 
-# Lihat Status dan Log
+
+
+# Melihat status dan histori
 git status
 git log
+git log --oneline --graph  # Versi ringkas & visual
+
 
 # Bekerja dengan Branch
-git branch
-git checkout -b fitur-x
-git checkout main
-git merge fitur-x
-git branch -d fitur-x
+git branch                 # Lihat semua branch
+git checkout -b fitur-x    # Buat + pindah ke branch
+git switch -c fitur-x      # Alternatif modern
+git checkout main          # Pindah ke main
+git switch main            # Alternatif modern
+git merge fitur-x          # Gabungkan fitur ke main
+git branch -d fitur-x      # Hapus branch lokal
+git push origin --delete fitur-x  # Hapus di GitHub
+git branch -r              # Melihat Branch Remote
+git branch -a              # Melihat Semua Branch (lokal + remote)
+git branch -m nama-baru    # Rename branch lokal
 
-# Sinkronisasi
-git pull
-git push
 
-# Clone dari GitHub
+# Sinkronisasi (GitHub <--> Lokal)
+git pull                   # Tarik update dari GitHub
+git fetch                  # Ambil data remote (tanpa merge)
+git push                   # Kirim commit ke GitHub
+git pull origin main       # Tarik dari remote branch tertentu
+
+
+# Clone repository GitHub
 git clone <url>
 
-# Tambah file .gitignore
+
+# Melihat perbedaan (sebelum commit)
+git diff                   # Perubahan yang belum di-staging
+git diff --staged          # Perubahan yang sudah di-staging
+
+
+# Staging sebagian isi file (interaktif)
+git add -p
+
+
+# Batalkan staging area
+git reset                  # Unstage semua
+git reset <file>           # Unstage file tertentu
+
+
+# Undo perubahan
+git restore <file>         # Balik file ke versi terakhir commit
+
+
+# Revert perubahan (bikin commit baru yang membatalkan)
+git revert <commit_hash>
+
+
+# Tambahkan file .gitignore
 touch .gitignore
+
+
+# Melihat remote yang ada
+git remote -v
+
+
+# Melihat file yang berubah sejak commit tertentu
+git diff <commit_hash>
+
+
+# Menyimpan sementara perubahan (jika ingin ganti branch dulu)
+git stash                  # Simpan sementara
+git stash pop              # Ambil kembali
+
+
+# Tagging Versi (Release Versioning)
+git tag v1.0.0      # Tag bernama v1.0.0 pada commit terakhir (biasanya commit yang kamu anggap versi stabil atau siap rilis).
+git push origin v1.0.0
+
+# Cherry Pick
+git cherry-pick <commit_hash>       # Ambil commit tertentu dari branch lain, Berguna jika ingin mengambil satu fitur tanpa merge seluruh branch.
+
+
+# Rebase (Linear Merge)
+git rebase main         # Ambil perubahan dari branch main, dan letakkan branch kita di atasnya, seolah-olah commit kita dibuat setelah main.
+
+
+# Clean File yang Tidak Dilacak (Untracked)
+git clean -f       # Bersihkan file yang tidak termasuk dalam Git, Tidak pernah di-add ke Git, Tidak ada dalam riwayat commit Git.
