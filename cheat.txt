@@ -104,3 +104,31 @@ git rebase main         # Ambil perubahan dari branch main, dan letakkan branch 
 
 # Clean File yang Tidak Dilacak (Untracked)
 git clean -f       # Bersihkan file yang tidak termasuk dalam Git, Tidak pernah di-add ke Git, Tidak ada dalam riwayat commit Git.
+git add .
+git commit -m "pesan"
+
+# Remote dan Push ke GitHub
+git remote add origin <url>
+git branch -M main
+git push -u origin main
+
+# Lihat Status dan Log
+git status
+git log
+
+# Bekerja dengan Branch
+git branch
+git checkout -b fitur-x
+git checkout main
+git merge fitur-x
+git branch -d fitur-x
+
+# Sinkronisasi
+git pull
+git push
+
+# Clone dari GitHub
+git clone <url>
+
+# Tambah file .gitignore
+touch .gitignore
