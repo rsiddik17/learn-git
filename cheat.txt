@@ -72,3 +72,7 @@
 
 -- Merge a branch
     git merge feature-x
+
+-- Delete / rename branch
+    git branch -d feature-x
+    git branch -m new-name
