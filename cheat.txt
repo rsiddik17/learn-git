@@ -46,22 +46,6 @@
     git fetch
     git pull origin main
 
-## 2. Remote Repository
-
-**Add a remote**
-- git remote add origin <url>
-- git remote -v
-
-**Push to remote**
-- git branch -M main
-- git push -u origin main
-- git push
-
-**Pull & fetch**
-- git pull
-- git fetch
-- git pull origin main
-
 3. Branching Workflow
 
 -- Create & switch branches**
