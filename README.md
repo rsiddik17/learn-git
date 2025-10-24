@@ -24,3 +24,8 @@ It can be used as a personal note or a quick reference (cheatsheet).
 **View differences**
 - git diff
 - git diff --staged
+
+**Config**
+- git config --global user.name "Your Name"
+- git config --global user.email "you@example.com"
+
