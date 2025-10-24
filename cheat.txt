@@ -73,3 +73,6 @@
 -- Merge a branch
     git merge feature-x
 
+<<<<<<< HEAD
+=======
+>>>>>>> fe
