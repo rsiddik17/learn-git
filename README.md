@@ -5,7 +5,7 @@ It can be used as a personal note or a quick reference (cheatsheet).
 
 ---
 
-## 1. Git Basics (Must Master First)
+## 1. Git Basics
 
 **Initialize a repository**
 - git init
