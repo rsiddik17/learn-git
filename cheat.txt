@@ -76,3 +76,7 @@
 -- Delete / rename branch
     git branch -d feature-x
     git branch -m new-name
+
+-- View all branches:
+    git branch -r
+    git branch -a
